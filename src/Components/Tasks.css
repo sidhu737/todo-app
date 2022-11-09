@@ -1,0 +1,10 @@
+.tasks {
+  margin: 20px 0px;
+  border: 1px solid grey;
+  width: 480px;
+  border-radius: 15px;
+}
+.no__tasks {
+  font-weight: bold;
+  font-size: 20px;
+}

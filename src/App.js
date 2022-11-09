@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Input from "./Components/Input";
+import Tasks from "./Components/Tasks";
 
 function App() {
+  const initialState = JSON.parse(localStorage.getItem("tasks")) || [];
+  const [listItems, setListItems] = useState(initialState);
+  const deleteItem = (id) => {
+    // const newList = listItems;
+    // const removeIndex = newList.findIndex((item) => item.id === id);
+    // newList.splice(removeIndex, 1);
+    // setListItems(()=);
+    setListItems((current) =>
+      current.filter((obj) => {
+        return obj.id !== id;
+      })
+    );
+  };
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(listItems));
+  }, [listItems]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>A Todo App</h1>
+      <Input setListItems={setListItems} listItems={listItems} />
+      <Tasks items={listItems} deleteItem={deleteItem} />
     </div>
   );
 }

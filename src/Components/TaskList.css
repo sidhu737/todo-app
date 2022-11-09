@@ -1,0 +1,17 @@
+.taskList {
+  margin: 0px 20px 10px 20px;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(45, 57, 72);
+  color: whitesmoke;
+  border-radius: 15px;
+  border-style: none;
+}
+.taskList__button {
+  padding: 5px;
+  color: whitesmoke;
+}
+.taskList > p {
+  padding-left: 20px;
+}

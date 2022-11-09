@@ -1,0 +1,13 @@
+.todo__input {
+  display: flex;
+  width: 350px;
+  margin-bottom: 20px;
+}
+.todo__input > input {
+  width: 250px;
+  padding: 10px;
+  margin-right: 20px;
+  border: none;
+  outline-style: none;
+  border-radius: 10px;
+}
